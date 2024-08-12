@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/index.css'%}">
+
+{% endblock %}
+{% block content %}
+
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/max.png' %}" alt="dhruvin blog">
+        <h2>Dhruvin's Blog</h2>
+    </header>
+    <p>hii, This is my blog</p>
+
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Blogs</h2>
+
+    <ul>
+        {% for post in posts %}
+            {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+
+</section>
+
+<section id="about">
+    <h2>What i do</h2>
+    <p>I love programming Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quia ad adipisci temporibus. Officia explicabo earum iure illum maiores exercitationem aut tempore aspernatur officiis minus cum quas ab enim ducimus asperiores commodi vero maxime, dolor ex natus eligendi ullam labore? Saepe nam explicabo fugit doloribus corrupti quae delectus molestiae modi consectetur animi, enim omnis debitis sint sit voluptatibus velit aliquam dolores cum autem eius eaque facilis ipsa est optio. Fugit, quo tempora! Consectetur quam fuga tenetur necessitatibus dolores assumenda itaque, at a nisi 
+        nesciunt atque nihil earum quo, praesentium deserunt, dignissimos aut. Sint odit magni magnam blanditiis, sapiente at sunt!</p>
+
+</section>
+My Blog
+{% endblock %}
